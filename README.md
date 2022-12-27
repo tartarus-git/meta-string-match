@@ -1,7 +1,7 @@
 
-First of all, I apologize for the massive amounts of comments in the code. I know it might look a little ugly, but I like to
+*First of all, I apologize for the massive amounts of comments in the code. I know it might look a little ugly, but I like to
 write things down that pop into my head and record the results of my research into the language spec as I go, for later reference in case
-I need it. I could do this in a separate document I guess, but having it in the context of the code is useful.
+I need it. I could do this in a separate document I guess, but having it in the context of the code is useful.*
 
 # The Code
 
