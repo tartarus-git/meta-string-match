@@ -5,7 +5,7 @@ I need it. I could do this in a separate document I guess, but having it in the 
 
 # The Code
 
-It's a compile-time strings to [DFA](https://en.wikipedia.org/wiki/Deterministic_finite_automaton) (Deterministic Finite state Automaton (I think)) converter. I'm working on a version that'll do any arbitrary regex, but this is all I got for now.
+It's a compile-time strings to [DFA](https://en.wikipedia.org/wiki/Deterministic_finite_automaton) converter. I'm working on a version that'll do any arbitrary regex, but this is all I got for now.
 
 If you've got a stream that you want to search through for a set of keywords, or you want to efficiently parse cmdline arguments, this is
 an efficient way to do that. It converts your set of strings into a DFA (Simply a state table, so the x coordinate is your character value and
@@ -42,9 +42,9 @@ CREATE_META_STRING_MATCHER(<put the name of the matcher here>, <put the matcher 
     Couple things to be aware of:
     The backslash character allows you to escape characters that normally aren't part of the strings, which in this case is only the | character
     and obviously the backslash character itself.
-    IMPORTANT: Because of the way strings work in C++, if you want to escape something in the matcher spec, you've got to write "\\|" for example,
+    IMPORTANT: Because of the way strings work in C++, if you want to escape something in the matcher spec, you've got to write "\\\\|" for example,
     because C++ has to first escape the backslash in the string literal before I can use it to escape the | character.
-    That means that putting a backslash character into a match string is done like this: "\\\\", I know, it's strange.
+    That means that putting a backslash character into a match string is done like this: "\\\\\\\\", I know, it's strange.
     ANOTHER THING: empty matcher specs are invalid and you'll get a compile error (you'll also get compilation errors for other errors, like
     putting a backslash at the end of the matcher spec without a character that follows it, or escaping a character that doesn't need to be
     escaped, etc...).
